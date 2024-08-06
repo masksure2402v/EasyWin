@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="includes/icons/fevicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="includes/icons/fevicon.png">
+    <link rel="stylesheet" href="includes/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="includes/assets/style/light.css">
+    <link rel="stylesheet" href="includes/dropzone/css/dropzone.css">
+    <script type="text/javascript" src="includes/popper/popper.min.js"></script>
+    <script type="text/javascript" src="includes/jquery/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js"></script>
+    <script type="text/javascript" src="includes/jquery/jquery.cookie.min.js"></script>
+    <script type="text/javascript" src="includes/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="includes/dropzone/js/dropzone.js"></script>
+    <script type="text/javascript" src="includes/osqr/qrious.min.js"></script>
+    <script type="text/javascript" src="includes/assets/cinfo/cpin.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+	<title>EasyWin</title>
+  </head>
+<body>
+<section class="container-fluid">
+	<div class="row mcas">
+		<div class="col-md-6 col-lg-4 main">
+			<div class="row" id="warea">
+				<div class="col-12 m-record">
+					<div class="row nav-top">
+						<div class="col-3 xtl tf-14">
+							<span class="nav-back wt" onclick="main()"></span>
+						</div>
+						<div class="col-6 tfw-5 tf-18">Withdraw</div>
+						<div class="col-3 xtr tf-14">
+							<span onclick="wdlist()">Records</span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12 mt-3 xtc" id="xv08">
+							<div class="tf-16 mb-2 tfcdg">Balance</div>
+							<div class="tf-24 tfw-7 tffss tfcdb">₹
+								<span class="tf-28" id="u_bal">0</span>
+							</div>
+						</div>
+					</div>
+					<div class="row" id="xv09">
+						<div class="col-12 pd1628">
+							<div class="row mr-0">
+								<div class="col-12 mt-2 mb-3 pa-0 ddavc" id="upcard">
+									<div class="row" id="paycard" onclick="addBCARD('UPI','n')">
+										<div class="col-12 xtl pa-0">
+											<span class="upiTS">UPI</span>
+										</div>
+										<div class="col-12 tf-12 pt-3 pb-2">With your UPID, you can withdraw money more quickly.</div>
+										<div class="col-12 pb-3">
+											<span class="mcpl" style="color: #191970;text-decoration: underline;">Click here to add.</span>
+											<span class="dipn" id="xpu">0</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-12 mb-3 pa-0 ddavc" id="bankcard">
+									<div class="row" id="paycard" onclick="addBCARD('Bank','n')">
+										<div class="col-12 xtl pa-0">
+											<span class="upiTS">Bank</span>
+										</div>
+										<div class="col-12 tf-12 pt-3 pb-2">Bank account can be added to get fast withdrawals.</div>
+										<div class="col-12 pb-3">
+											<span class="mcpl" style="color: #191970;text-decoration: underline;">Click here to add.</span>
+											<span class="dipn" id="bbk">0</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-12 mb-3 pa-0 ddavc" id="pwcard">
+									<div class="xtc tf-36" id="wddis">PayTm</div>
+								</div>
+								<div class="col-12 pa-0" id="wdtnp">
+									<div class="xtl tf-18 tfw-6 tfcdb">Amount</div>
+									<div class="inpbcx rc nxb tfcb">
+										<span class="xicon rc">₹</span>
+										<input type="tel" class="xbox rcamt" maxlength="10" placeholder="530 ~ 50000" autocomplete="off" onkeydown="wdenk()" oninput="chwda()" id="wdamt">
+									</div>
+								</div>
+							</div>
+							<div class="row tfcdg tf-14 xtl tfwr">
+								<div class="col-6 pt-2">Amount < ₹
+									<span id="wdw">1000</span>
+									,fee ₹
+									<span id="wdx">30</span>
+								</div>
+								<div class="col-6 pt-2 xtr">
+									Maximum:
+									<span id="mwa">₹50000</span>
+								</div>
+								<div class="col-6 pt-2">
+									Amount>=₹
+									<span id="wdy">1000</span>
+									,fee 
+									<span id="wdz">3</span>
+									%
+								</div>
+								<div class="col-6 pt-2 xtr">
+									Minimum:
+									<span id="mwda">₹530</span>
+								</div>
+							</div>
+							<div class="mt-4 mb-2">
+								<div class="btn-main" id="wdb" onclick="swdp()">Withdrawal</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row" id="odrea"></div>
+			<div class="row" id="footer">
+				<div class="col-12 nav-bar adsob" id="adsob">
+					<div class="row">
+						<div class="col-3 pa-0">
+							<div class="navItem sel" id="moxht2b4u" onclick="home()">
+								<div class="xtc">
+									<span class="icon home sel" id="home"></span>
+								</div>
+								<div class="xtc">Home</div>
+							</div>
+						</div>
+						<div class="col-3 pa-0">
+							<div class="navItem" id="raeiyf2m0" onclick="group()">
+								<div class="xtc">
+									<span class="icon group" id="group"></span>
+								</div>
+								<div class="xtc">Invite</div>
+							</div>
+						</div>
+						<div class="col-3 pa-0">
+							<div class="navItem" id="sfrm6bvy" onclick="wallet()">
+								<div class="xtc">
+									<span class="icon wallet" id="wallet"></span>
+								</div>
+								<div class="xtc">Recharge</div>
+							</div>
+						</div>
+						<div class="col-3 pa-0">
+							<div class="navItem" id="mcpnvd2my" onclick="my()">
+								<div class="xtc">
+									<span class="icon my" id="my"></span>
+								</div>
+								<div class="xtc">My</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row" id="opffp"></div>
+			<div class="row" id="anof"></div>
+			<div class="row" id="dta_ref"></div>
+		</div>
+	</div>
+</section>
+<script src="index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script type="text/javascript" src= "includes/assets/script/fsnode.js"></script>
+<script type="text/javascript" src="includes/assets/script/m7uxy5d9ata.js"></script>
+<script type="text/javascript" src="includes/assets/script/xHM9t7jsm6.js"></script>
+<script type="text/javascript" src="includes/assets/script/xINV7wovi.js"></script>
+<script type="text/javascript" src="includes/assets/script/sfrm.js"></script>
+<script type="text/javascript" src="includes/assets/script/myacc.js"></script>
+<script type="text/javascript" src="includes/assets/script/TabODjs.js"></script>
+<script type="text/javascript" src="includes/assets/script/30sfv01g.js"></script>
+<script type="text/javascript" src="includes/assets/script/30shtv01g.js"></script>
+<script type="text/javascript" src="includes/assets/script/par3mgfn.js"></script>
+<script type="text/javascript" src="includes/assets/script/sap2mg.js"></script>
+<script type="text/javascript" src="includes/assets/script/dcsOneM.js"></script>
+<script type="text/javascript" src="includes/assets/script/AvB1M.js"></script>
+<script type="text/javascript" src="includes/assets/script/wlc1m.js"></script>
+<script type="text/javascript" src="includes/assets/script/msinstant.js"></script>
+<script type="text/javascript" src="includes/assets/script/evntall.js"></script>
+<script type="text/javascript" src="includes/assets/script/jsxm.js"></script>
+<script type="text/javascript" src="includes/assets/script/colgamjss.js"></script>
+<script type="text/javascript" src="includes/assets/script/oswdjmbce.js"></script>
+<script type="text/javascript" src="includes/assets/script/checkinrwd.js"></script>
+<script type="text/javascript" src="includes/assets/script/exreward.js"></script>
+<script type="text/javascript" src="includes/assets/script/ccpjsm03nj.js"></script>
+<script type="text/javascript" src="includes/assets/script/TabJSm8vb.js"></script>
+</body>
+</html>

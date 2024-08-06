@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="includes/icons/fevicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="includes/icons/fevicon.png">
+    <link rel="stylesheet" href="includes/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="includes/assets/style/light.css">
+    <link rel="stylesheet" href="includes/dropzone/css/dropzone.css">
+    <script type="text/javascript" src="includes/popper/popper.min.js"></script>
+    <script type="text/javascript" src="includes/jquery/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js"></script>
+    <script type="text/javascript" src="includes/jquery/jquery.cookie.min.js"></script>
+    <script type="text/javascript" src="includes/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="includes/dropzone/js/dropzone.js"></script>
+    <script type="text/javascript" src="includes/osqr/qrious.min.js"></script>
+    <script type="text/javascript" src="includes/assets/cinfo/cpin.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>EasyWin</title>
+  </head>
+  <body >
+    <section >
+        <div class="row mcas">
+            <div class="col-md-6 col-lg-4 main">
+                <div class="row" id="warea">
+                    <div class="col-12 nav-top">
+                        <div class="row">
+                            <div class="col-2 xtl">
+                                <span class="nav-back wt" onclick="main()"></span>                           
+                            </div>
+                            <div class="col-8 tfw-5 tf-18">Fast-Parity</div>
+                            <div class="col-2 xtr mcpl" onclick="fsrule()">Rule</div>
+                        </div>
+                    </div>
+                    <div class="col-12 gmxcfm">
+                        <div class="row mt-2 tfwr pt-2">
+                            <div class="col-6 xtl">
+                                <div class="tf-16 mb-2 tfcdg">Time</div>
+                                <div class="tfcdb tf-24 tfw-5 period" id="cpd"></div>
+                            </div>
+                            <div class="col-6 xtr">
+                                <div class="tf-16 mb-2 tfcdg">Count Down</div>
+                                <div class="cd" onclick="CRN30SP()">
+                                    <span class="cdspn">0</span>
+                                    <span class="cdspn" id="fsm">0</span>
+                                    :
+                                    <span class="cdspn" id="fs0">1</span> 
+                                    <span class="cdspn" id="fs1">3</span>
+                                </div>
+                                <div id="cdx"></div>
+                            </div>
+                        </div>
+                        <div class="row mr-0 mt-4 tf-18">
+                            <div class="col-4 pa-0">
+                                <div class="join green" id="jcg" onclick="green()">
+                                    <div class="tfw-6">
+                                        <span class="rocket sm"></span>
+                                    </div>
+                                    <div class="tfw-5">Join Green</div>
+                                </div>
+                                <div class="tflh-10 tf-14 tfcdg">1:2</div>
+                            </div>
+                            <div class="col-4 pa-0">
+                                <div class="join violet" id="jcv" onclick="violet()">
+                                    <div class="tfw-6">
+                                        <span class="rocket sm"></span>
+                                    </div>
+                                    <div class="tfw-5">Join white</div>
+                                </div>
+                                <div class="tflh-10 tf-14 tfcdg">1:4.5</div>
+                            </div>
+                            <div class="col-4 pa-0">
+                                <div class="join red" id="jcr" onclick="red()">
+                                    <div class="tfw-6">
+                                        <span class="rocket sm"></span>
+                                    </div>
+                                    <div class="tfw-5">Join Red</div>
+                                </div>
+                                <div class="tflh-10 tf-14 tfcdg">1:2</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="row" id="nfrm"></div>
+                    </div>
+                    <div class="col-12 mt-2">
+                        <div class="row tffm h264">
+                            <div class="col-12 tfw-7 tabin active" id="rcdv">Record</div>
+                            <div class="col-12">
+                                <div class="row tf-16 mr-0" id="xrecd">
+                                    <div class="col-8 mt-2 mb-2 pb-2 pl-0 xtl tf-18 tfcdb">Fast-Parity Record(s)</div>
+                                    <div class="col-4 mt-2 mb-2 pb-2 pr-0 tf-14 xtr">
+                                        <span class="mcpl tfcdg" onclick="fsrx20()">more ></span>
+                                     </div>
+                                    <div class="col-12" >
+                                        <div class="row record " id="rx10">
+
+                                            <div class="rcd-pillar mb-2" >
+                                                <div class="WS" id="1">
+                                                </div>
+                                               <div class="rcd-per" id="text1">1</div>
+                                            </div>
+
+                                            <div class="rcd-pillar mb-2">
+                                                <div class="WS" id="2">
+                                                </div>
+                                                <div class="rcd-per" id="text2">2</div>
+                                            </div>
+ 
+                                            <div class="rcd-pillar mb-2">
+                                                <div class="WS" id="3">
+                                                </div>
+                                                <div class="rcd-per" id="text3">3</div>
+                                            </div>
+
+                                            <div class="rcd-pillar mb-2">
+                                                <div class="WS" id="4">
+                                                </div>
+                                                <div class="rcd-per" id="text4">4</div>
+                                            </div>
+
+                                            <div class="rcd-pillar mb-2">
+                                                <div class="WS" id="5">
+                                                </div>
+                                                <div class="rcd-per" id="text5">5</div>
+                                            </div>
+
+                                            <div class="rcd-pillar mb-2">
+                                                <div class="WS" id="6">
+                                                </div>
+                                                <div class="rcd-per" id="text6">6</div>
+                                            </div>
+
+                                            <div class="rcd-pillar mb-2">
+                                                <div class="WS" id="7">
+                                                </div>
+                                                <div class="rcd-per" id="text7">7</div>
+                                            </div>
+
+                                            <div class="rcd-pillar mb-2">
+                                                <div class="WS" id="8">
+                                                </div>
+                                                <div class="rcd-per" id="text8">8</div>
+                                            </div>
+
+                                            <div class="rcd-pillar mb-2">
+                                                <div class="WS" id="9">
+                                                </div>
+                                                <div class="rcd-per" id="text9">9</div>
+                                            </div>
+                                            <div class="rcd-pillar mb-2">
+                                                <div class="WS" id="10">
+                                                </div>
+                                                <div class="rcd-per" id="text10">10</div>
+                                            </div>
+
+                                            <div class="rcd-pillar mb-2">
+                                                <div class="WS" id="11">
+                                                </div>
+                                                <div class="rcd-per" id="text11">11</div>
+                                            </div>
+
+                                            <div class="rcd-pillar mb-2">
+                                                <div class="WS" id="12">
+                                                </div>
+                                                <div class="rcd-per" id="text12">12</div>
+                                            </div>
+
+                                            <div class="rcd-pillar mb-2">
+                                                <div class="WS" id="13">
+                                                </div>
+                                                <div class="rcd-per" id="text13">13</div>
+                                            </div>
+
+                                            <div class="rcd-pillar mb-2">
+                                                <div class="WS" id="14">
+                                                </div>
+                                                <div class="rcd-per" id="text14">14</div>
+                                            </div>
+
+                                            
+                                            <div class="rcd-pillar mb-2">
+                                                <div class="WS" id="15">
+                                                </div>
+                                                <div class="rcd-per" id="text15">15</div>
+                                            </div>
+
+                                            
+                                            <div class="rcd-pillar mb-2">
+                                                <div class="WS" id="16">
+                                                </div>
+                                                <div class="rcd-per" id="text16">16</div>
+                                            </div>
+
+                                            
+                                            <div class="rcd-pillar mb-2">
+                                                <div class="WS" id="17">
+                                                </div>
+                                                <div class="rcd-per" id="text17">17</div>
+                                            </div>
+
+                                            
+                                            <div class="rcd-pillar mb-2">
+                                                <div class="WS" id="18">
+                                                </div>
+                                                <div class="rcd-per" id="text18">18</div>
+                                            </div>
+
+                                            
+                                            <div class="rcd-pillar mb-2">
+                                                <div class="WS" id="19">
+                                                </div>
+                                                <div class="rcd-per" id="text19">19</div>
+                                            </div>
+
+                                            
+                                            <div class="rcd-pillar mb-2">
+                                                <div class="WS" id="20">
+                                                </div>
+                                                <div class="rcd-per" id="text20">20</div>
+                                            </div>
+
+                                            
+                                            <div class="rcd-pillar mb-2">
+                                                <div class="WS" id="21">
+                                                </div>
+                                                <div class="rcd-per" id="text21">21</div>
+                                            </div>
+
+                                            
+                                            <div class="rcd-pillar mb-2">
+                                                <div class="WS" id="22">
+                                                </div>
+                                                <div class="rcd-per" id="text22">22</div>
+                                            </div>
+
+                                            
+                                            <div class="rcd-pillar mb-2">
+                                                <div class="WS" id="23">
+                                                </div>
+                                                <div class="rcd-per" id="text23">23</div>
+                                            </div>
+
+                                            
+                                            <div class="rcd-pillar mb-2">
+                                                <div class="WS" id="24">
+                                                </div>
+                                                <div class="rcd-per" id="text24">24</div>
+                                            </div>
+
+                                            
+                                            <div class="rcd-pillar mb-2">
+                                                <div class="WS" id="25">
+                                                </div>
+                                                <div class="rcd-per" id="text25">25</div>
+                                            </div>
+
+                                            
+                                            <div class="rcd-pillar mb-2">
+                                                <div class="WS" id="26">
+                                                </div>
+                                                <div class="rcd-per" id="text26">26</div>
+                                            </div>
+
+                                            
+                                            <div class="rcd-pillar mb-2">
+                                                <div class="WS" id="27">
+                                                </div>
+                                                <div class="rcd-per" id="text27">27</div>
+                                            </div>
+
+                                            
+                                            <div class="rcd-pillar mb-2">
+                                                <div class="WS" id="28">
+                                                </div>
+                                                <div class="rcd-per" id="text28">28</div>
+                                            </div>
+
+                                            <div class="rcd-pillar mb-2">
+                                                <div class="WS" id="29">
+                                                </div>
+                                                <div class="rcd-per" id="text29">29</div>
+                                            </div>
+
+                                            
+                                            <div class="rcd-pillar mb-2">
+                                                <div class="WS" id="30">
+                                                </div>
+                                                <div class="rcd-per" id="text30">30</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mr-0" id="lfprd"></div>
+                            </div>
+                        </div>
+                        <div class="row mr-0" id="lfprd"></div>
+                        <div class="row mt-2">
+                            <div class="col-12 tfw-6 tffm tabin active" id="vevod" onclick="fsevod()">Everyone's Order</div>
+                            <!-- <div class="col-6 tfw-6 tffm tabin" id="vmyod" onclick="fsodx()">My Order</div> -->
+                            <div class="col-12" id="ev">
+                                <div class="col-4 tf-14 pt-2">User</div>
+                                <div class="col-3 tf-14 pt-2">ID</div>
+                                <div class="col-2 tf-14 pt-2">Select</div>
+                                <div class="col-3 tf-14 pt-2 xtr">Point</div>
+                            </div>
+                            
+                            <div class="row1">
+                                <div class="col-12" id="fseod">
+                                    <div class="row pt-2 pb-2 lih-32" style="height: 48px;">
+                                        <div class="col-4 xtl">000000000000</div>
+                                        <div class="col-3 cgray">000000</div>
+                                        <div class="col-2 ">
+                                            <span class="UG"></span>
+                                        </div>
+                                        <div class="col-3 xtr" id="xtr1">₹10</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row1" >
+                                <div class="col-12" id="fseod">
+                                    <div class="row pt-2 pb-2 lih-32" style="height: 48px;">
+                                        <div class="col-4 xtl">000000000000</div>
+                                        <div class="col-3 cgray">000000</div>
+                                        <div class="col-2 ">
+                                            <span class="UG"></span>
+                                        </div>
+                                        <div class="col-3 xtr" id="xtr2" >₹10</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row1">
+                                <div class="col-12" id="fseod">
+                                    <div class="row pt-2 pb-2 lih-32" style="height: 48px;">
+                                        <div class="col-4 xtl">000000000000</div>
+                                        <div class="col-3 cgray">000000</div>
+                                        <div class="col-2 ">
+                                            <span class="UG"></span>
+                                        </div>
+                                        <div class="col-3 xtr" id="xtr3">₹10</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row1">
+                                <div class="col-12" id="fseod">
+                                    <div class="row pt-2 pb-2 lih-32" style="height: 48px;">
+                                        <div class="col-4 xtl">000000000000</div>
+                                        <div class="col-3 cgray">000000</div>
+                                        <div class="col-2 ">
+                                            <span class="UG"></span>
+                                        </div>
+                                        <div class="col-3 xtr"id="xtr4">₹10</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row1">
+                                <div class="col-12" id="fseod">
+                                    <div class="row pt-2 pb-2 lih-32" style="height: 48px;">
+                                        <div class="col-4 xtl">000000000000</div>
+                                        <div class="col-3 cgray">000000</div>
+                                        <div class="col-2 ">
+                                            <span class="UG"></span>
+                                        </div>
+                                        <div class="col-3 xtr"id="xtr5">₹10</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row1">
+                                <div class="col-12" id="fseod">
+                                    <div class="row pt-2 pb-2 lih-32" style="height: 48px;">
+                                        <div class="col-4 xtl">000000000000</div>
+                                        <div class="col-3 cgray">000000</div>
+                                        <div class="col-2 ">
+                                            <span class="UG"></span>
+                                        </div>
+                                        <div class="col-3 xtr"id="xtr6">₹10</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row1">
+                                <div class="col-12" id="fseod">
+                                    <div class="row pt-2 pb-2 lih-32" style="height: 48px;">
+                                        <div class="col-4 xtl">000000000000</div>
+                                        <div class="col-3 cgray">000000</div>
+                                        <div class="col-2 ">
+                                            <span class="UG"></span>
+                                        </div>
+                                        <div class="col-3 xtr"id="xtr7">₹10</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row1">
+                                <div class="col-12" id="fseod">
+                                    <div class="row pt-2 pb-2 lih-32" style="height: 48px;">
+                                        <div class="col-4 xtl">000000000000</div>
+                                        <div class="col-3 cgray">000000</div>
+                                        <div class="col-2 ">
+                                            <span class="UG"></span>
+                                        </div>
+                                        <div class="col-3 xtr"id="xtr8">₹10</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row1">
+                                <div class="col-12" id="fseod">
+                                    <div class="row pt-2 pb-2 lih-32" style="height: 48px;">
+                                        <div class="col-4 xtl">000000000000</div>
+                                        <div class="col-3 cgray">000000</div>
+                                        <div class="col-2 ">
+                                            <span class="UG"></span>
+                                        </div>
+                                        <div class="col-3 xtr"id="xtr9">₹10</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row1">
+                                <div class="col-12" id="fseod">
+                                    <div class="row pt-2 pb-2 lih-32" style="height: 48px;">
+                                        <div class="col-4 xtl">000000000000</div>
+                                        <div class="col-3 cgray">000000</div>
+                                        <div class="col-2 ">
+                                            <span class="UG"></span>
+                                        </div>
+                                        <div class="col-3 xtr"id="xtr10">₹10</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row1">
+                                <div class="col-12" id="fseod">
+                                    <div class="row pt-2 pb-2 lih-32" style="height: 48px;">
+                                        <div class="col-4 xtl">000000000000</div>
+                                        <div class="col-3 cgray">000000</div>
+                                        <div class="col-2 ">
+                                            <span class="UG"></span>
+                                        </div>
+                                        <div class="col-3 xtr"id="xtr11">₹10</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row1">
+                                <div class="col-12" id="fseod">
+                                    <div class="row pt-2 pb-2 lih-32" style="height: 48px;">
+                                        <div class="col-4 xtl">000000000000</div>
+                                        <div class="col-3 cgray">000000</div>
+                                        <div class="col-2 ">
+                                            <span class="UG"></span>
+                                        </div>
+                                        <div class="col-3 xtr"id="xtr12">₹10</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row1">
+                                <div class="col-12" id="fseod">
+                                    <div class="row pt-2 pb-2 lih-32" style="height: 48px;">
+                                        <div class="col-4 xtl">000000000000</div>
+                                        <div class="col-3 cgray">000000</div>
+                                        <div class="col-2 ">
+                                            <span class="UG"></span>
+                                        </div>
+                                        <div class="col-3 xtr"id="xtr13">₹10</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row1">
+                                <div class="col-12" id="fseod">
+                                    <div class="row pt-2 pb-2 lih-32" style="height: 48px;">
+                                        <div class="col-4 xtl">000000000000</div>
+                                        <div class="col-3 cgray">000000</div>
+                                        <div class="col-2 ">
+                                            <span class="UG"></span>
+                                        </div>
+                                        <div class="col-3 xtr"id="xtr14">₹10</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row1">
+                                <div class="col-12" id="fseod">
+                                    <div class="row pt-2 pb-2 lih-32" style="height: 48px;">
+                                        <div class="col-4 xtl">000000000000</div>
+                                        <div class="col-3 cgray">000000</div>
+                                        <div class="col-2 ">
+                                            <span class="UG"></span>
+                                        </div>
+                                        <div class="col-3 xtr"id="xtr15">₹10</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row1">
+                                <div class="col-12" id="fseod">
+                                    <div class="row pt-2 pb-2 lih-32" style="height: 48px;">
+                                        <div class="col-4 xtl">000000000000</div>
+                                        <div class="col-3 cgray">000000</div>
+                                        <div class="col-2 ">
+                                            <span class="UG"></span>
+                                        </div>
+                                        <div class="col-3 xtr"id="xtr16">₹10</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row1">
+                                <div class="col-12" id="fseod">
+                                    <div class="row pt-2 pb-2 lih-32" style="height: 48px;">
+                                        <div class="col-4 xtl">000000000000</div>
+                                        <div class="col-3 cgray">000000</div>
+                                        <div class="col-2 ">
+                                            <span class="UG"></span>
+                                        </div>
+                                        <div class="col-3 xtr"id="xtr17">₹10</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row1">
+                                <div class="col-12" id="fseod">
+                                    <div class="row pt-2 pb-2 lih-32" style="height: 48px;">
+                                        <div class="col-4 xtl">000000000000</div>
+                                        <div class="col-3 cgray">000000</div>
+                                        <div class="col-2 ">
+                                            <span class="UG"></span>
+                                        </div>
+                                        <div class="col-3 xtr"id="xtr18">₹10</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row1">
+                                <div class="col-12" id="fseod">
+                                    <div class="row pt-2 pb-2 lih-32" style="height: 48px;">
+                                        <div class="col-4 xtl">000000000000</div>
+                                        <div class="col-3 cgray">000000</div>
+                                        <div class="col-2 ">
+                                            <span class="UG"></span>
+                                        </div>
+                                        <div class="col-3 xtr"id="xtr19">₹10</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row1">
+                                <div class="col-12" id="fseod">
+                                    <div class="row pt-2 pb-2 lih-32" style="height: 48px;">
+                                        <div class="col-4 xtl">000000000000</div>
+                                        <div class="col-3 cgray">000000</div>
+                                        <div class="col-2 ">
+                                            <span class="UG"></span>
+                                        </div>
+                                        <div class="col-3 xtr"id="xtr20">₹10</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="col-12" id="order">
+                            <div class="row plr-10 pb-2">
+                                <div class="col-12 pb-3 pt-2 tf-14 dflx">
+                                    <div class="wd-100 xtl">Period</div>
+                                    <div class="wd-36">Select</div>
+                                    <div class="wd-46">Point</div>
+                                    <div class="wd-36">Result</div>
+                                    <div class="wd-80 xtr">Amount</div>
+                                </div>
+                            </div>
+                            <!-- <div class="row">
+                                <div class="col-12" id="mywod">
+
+                                </div>
+                            </div> -->
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="m-order" onclick="fsodx20()">more ></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mr-0 mordm"></div>
+                </div>
+                <div class="col-12 betfbg" id="bfbg" onclick="clsbfrm()" style="display: none;"></div>
+                <div class="col-12" id="ucheck"></div>
+                <div class="col-12" id="suc-fail"></div>
+                <div class="col-12" id="xrule"></div>
+            </div>
+            <div class="row" id="odrea"></div>
+            <div class="row" id="footer"></div>
+            <div class="row" id="opffp"></div>
+            <div class="row" id="anof"></div>
+            <div class="row" id="dta_ref"></div>
+        </div>
+    </section>
+   <script src="index.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+   <script type="text/javascript" src= "includes/assets/script/fsnode.js"></script>
+   <script type="text/javascript" src="includes/assets/script/m7uxy5d9ata.js"></script>
+   <script type="text/javascript" src="includes/assets/script/xHM9t7jsm6.js"></script>
+   <script type="text/javascript" src="includes/assets/script/xINV7wovi.js"></script>
+   <script type="text/javascript" src="includes/assets/script/sfrm.js"></script>
+   <script type="text/javascript" src="includes/assets/script/myacc.js"></script>
+   <script type="text/javascript" src="includes/assets/script/TabODjs.js"></script>
+   <script type="text/javascript" src="includes/assets/script/30sfv01g.js"></script>
+   <script type="text/javascript" src="includes/assets/script/30shtv01g.js"></script>
+   <script type="text/javascript" src="includes/assets/script/par3mgfn.js"></script>
+   <script type="text/javascript" src="includes/assets/script/sap2mg.js"></script>
+   <script type="text/javascript" src="includes/assets/script/dcsOneM.js"></script>
+   <script type="text/javascript" src="includes/assets/script/AvB1M.js"></script>
+   <script type="text/javascript" src="includes/assets/script/wlc1m.js"></script>
+   <script type="text/javascript" src="includes/assets/script/msinstant.js"></script>
+   <script type="text/javascript" src="includes/assets/script/evntall.js"></script>
+   <script type="text/javascript" src="includes/assets/script/jsxm.js"></script>
+   <script type="text/javascript" src="includes/assets/script/colgamjss.js"></script>
+   <script type="text/javascript" src="includes/assets/script/oswdjmbce.js"></script>
+   <script type="text/javascript" src="includes/assets/script/checkinrwd.js"></script>
+   <script type="text/javascript" src="includes/assets/script/exreward.js"></script>
+   <script type="text/javascript" src="includes/assets/script/ccpjsm03nj.js"></script>
+   <script type="text/javascript" src="includes/assets/script/TabJSm8vb.js"></script>
+
+
+  </body>
+  <grammarly-desktop-integration data-grammarly-shadow-root="true">
+    <style>
+          div.grammarly-desktop-integration {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select:none;
+            user-select:none;
+          }
+    
+          div.grammarly-desktop-integration:before {
+            content: attr(data-content);
+          }
+    </style>
+</html>
+
